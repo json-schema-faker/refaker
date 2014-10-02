@@ -32,6 +32,24 @@ refaker({
 
 That's it.
 
+## Options
+
+- **schema** (object)
+
+  The JSON-schema to validate.
+
+- **fakeroot** (string)
+
+  If provided, any matching `$ref` will be resolved under the specified `directory`.
+
+- **directory** (string)
+
+  A local path containing the JSON-schemas.
+
+  If missing, will use `process.cwd()` instead.
+
+Any `$ref` found will be downloaded or faked locally.
+
 ## Build status
 
 [![Build Status](https://travis-ci.org/gextech/refaker.png?branch=master)](https://travis-ci.org/gextech/refaker)
