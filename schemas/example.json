@@ -1,0 +1,12 @@
+{
+  "children": [
+    {
+      "something": "fun",
+      "recursive": true
+    },
+    {
+      "something": "yay!",
+      "recursive": false
+    }
+  ]
+}

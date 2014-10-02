@@ -1,0 +1,11 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "type": "object",
+  "properties": {
+    "something": {
+      "type": "string"
+    },
+    "recursive": { "$ref": "http://example.com/recursive/schema.json" }
+  },
+  "required": ["something", "recursive"]
+}

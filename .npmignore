@@ -3,5 +3,6 @@
 *.log
 *.tgz
 .DS_Store
+/schemas
 /lib/test.js
 /node_modules

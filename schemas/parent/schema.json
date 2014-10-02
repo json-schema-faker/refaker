@@ -1,0 +1,11 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "type": "object",
+  "properties": {
+    "children": {
+      "type": "array",
+      "items": { "$ref": "http://example.com/child/schema.json" }
+    }
+  },
+  "required": ["children"]
+}
