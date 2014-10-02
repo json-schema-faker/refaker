@@ -1,0 +1,15 @@
+{
+  "name": "refaker",
+  "version": "0.0.0",
+  "description": "Download or fake JSON schemas from $ref values",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "node lib/test.js"
+  },
+  "devDependencies": {
+    "tv4": "^1.1.0"
+  },
+  "dependencies": {
+    "segueta": "0.0.1"
+  }
+}
