@@ -1,0 +1,7 @@
+.c9
+*~
+*.log
+*.tgz
+.DS_Store
+/lib/test.js
+/node_modules
