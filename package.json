@@ -10,6 +10,6 @@
     "tv4": "^1.1.0"
   },
   "dependencies": {
-    "segueta": "0.0.1"
+    "segueta": "~0.0.2"
   }
 }
