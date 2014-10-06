@@ -34,9 +34,15 @@ That's it.
 
 ## Options
 
-- **schema** (object)
+- **schema** (object|aray)
 
   The JSON-schema to validate.
+
+- **schemas** (object|array)
+
+  Multiple JSON-schemas to validate at once.
+
+  This is an alias for the **schema** option.
 
 - **fakeroot** (string)
 
