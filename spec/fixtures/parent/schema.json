@@ -1,10 +1,16 @@
 {
   "$schema": "http://json-schema.org/schema",
   "type": "object",
+  "id": "parent",
+  "definitions": {
+    "children": {
+      "$ref": "../schema-refs.json#/definitions/example"
+    }
+  },
   "properties": {
     "children": {
       "type": "array",
-      "items": { "$ref": "../schema-refs.json#/definitions/example" }
+      "items": { "$ref": "#children" }
     }
   },
   "required": ["children"]

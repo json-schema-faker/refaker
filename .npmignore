@@ -4,6 +4,5 @@
 *.log
 *.tgz
 .DS_Store
-/schemas
-/lib/test.js
+/spec
 /node_modules
