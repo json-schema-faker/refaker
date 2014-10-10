@@ -1,5 +1,5 @@
 {
-  "id": "refs",
+  "id": "#refs",
   "definitions": {
     "example": {
       "$ref": "./child/schema.json"
