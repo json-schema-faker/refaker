@@ -9,7 +9,7 @@ describe 'resolving $ref values', ->
 
     refaker
       schemas: [schema]
-      fakeroot: 'http://example.com',
+      fakeroot: 'http://example.com'
       directory: path.resolve(__dirname + '/fixtures')
     , (err, refs) ->
       expect(data).toHaveSchema schema, refs
