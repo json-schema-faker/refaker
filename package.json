@@ -14,6 +14,7 @@
     "tv4": "1.1.0"
   },
   "dependencies": {
+    "deref": "^0.1.1",
     "segueta": "~0.0.2"
   }
 }
