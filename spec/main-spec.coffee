@@ -15,7 +15,7 @@ describe 'resolving $ref values', ->
       directory: path.resolve(__dirname + '/fixtures')
     , (err, refs, schemas) ->
       unless err
-        expect(schemas[0]).toHaveRefs(0)
-        expect(data).toHaveSchema schemas[0]
+        expect(schemas[0]).toHaveRefs 2
+        expect(data).toHaveSchema schemas[0], refs
 
       done(err)
