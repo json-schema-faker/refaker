@@ -19,14 +19,12 @@ refaker({
   schema: schema,
   fakeroot: 'http://example.com',
   directory: '/path/to/schemas'
-}, function(err, refs) {
-  if (refs) {
-    for (var id in refs) {
-      tv4.addSchema(id, refs[id]);
-    }
+}, function(err, refs, schemas) {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log(tv4.validateResult(data, schemas[0]));
   }
-
-  console.log(tv4.validateResult(data, schema));
 });
 ```
 
@@ -56,6 +54,23 @@ That's it.
 
 Any `$ref` found will be downloaded or faked locally.
 
+## Callback
+
+The given callback will receive three arguments:
+
+- **err** (mixed)
+
+  Empty means success.
+
+- **refs** (object)
+
+  Hash of resolved `$ref`s.
+
+- **schemas** (array)
+
+  Normalized schemas if success (same order as input).
+
+
 ## Build status
 
-[![Build Status](https://travis-ci.org/gextech/refaker.png?branch=master)](https://travis-ci.org/gextech/refaker)
+[![Build Status](https://travis-ci.org/gextech/refaker.png?branch=master)](https://travis-ci.org/gextech/refaker) [![NPM version](https://badge.fury.io/js/deref.png)](http://badge.fury.io/js/deref) [![Coverage Status](https://coveralls.io/repos/gextech/refaker/badge.png?branch=master)](https://coveralls.io/r/gextech/refaker?branch=master)
