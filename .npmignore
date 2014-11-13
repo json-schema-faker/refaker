@@ -4,6 +4,8 @@
 *.log
 *.tgz
 .DS_Store
+Gruntfile.js
 /spec
+/package
 /coverage
 /node_modules
