@@ -6,7 +6,7 @@
     "something": {
       "type": "string"
     },
-    "recursive": { "$ref": "http://example.com/recursive/schema.json" }
+    "recursive": { "$ref": "http://localhost:8081/recursive/schema.json" }
   },
   "required": ["something", "recursive"]
 }

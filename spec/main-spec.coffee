@@ -1,3 +1,5 @@
+require('./helpers')
+
 path = require('path')
 
 refaker = require('../lib')
@@ -11,6 +13,9 @@ describe 'resolving $ref values', ->
       schemas: [schema]
       fakeroot: 'http://example.com'
       directory: path.resolve(__dirname + '/fixtures')
-    , (err, refs) ->
-      expect(data).toHaveSchema schema, refs
+    , (err, refs, schemas) ->
+      unless err
+        expect(schemas[0]).toHaveRefs(0)
+        expect(data).toHaveSchema schemas[0]
+
       done(err)
