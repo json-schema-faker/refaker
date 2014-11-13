@@ -23,6 +23,12 @@ refaker({
   if (err) {
     console.log(err);
   } else {
+    for (var id in refs) {
+      // register resolved refs
+      tv4.addSchema(id, refs[id]);
+    }
+
+    // validates the first passed schema
     console.log(tv4.validateResult(data, schemas[0]));
   }
 });
