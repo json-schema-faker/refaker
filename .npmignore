@@ -5,4 +5,5 @@
 *.tgz
 .DS_Store
 /spec
+/coverage
 /node_modules
