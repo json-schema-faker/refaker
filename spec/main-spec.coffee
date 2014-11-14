@@ -1,5 +1,3 @@
-require('./helpers')
-
 path = require('path')
 
 refaker = require('../lib')

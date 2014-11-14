@@ -13,6 +13,8 @@ jasmine.Matchers::toHaveRefs = (expected = 0) ->
   if expected isnt nodes = refCount @actual
     throw new Error "Invalid $ref count #{nodes}, expected #{expected}"
 
+  true
+
 jasmine.Matchers::toHaveSchema = (expected, refs) ->
   api = tv4.freshApi()
 
@@ -26,3 +28,5 @@ jasmine.Matchers::toHaveSchema = (expected, refs) ->
   throw 'Missing ' + result.missing.join(', ') if result.missing.length
 
   throw result.error if result.error
+
+  true
