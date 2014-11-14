@@ -79,4 +79,4 @@ The given callback will receive three arguments:
 
 ## Build status
 
-[![Build Status](https://travis-ci.org/gextech/refaker.png?branch=master)](https://travis-ci.org/gextech/refaker) [![NPM version](https://badge.fury.io/js/deref.png)](http://badge.fury.io/js/deref) [![Coverage Status](https://coveralls.io/repos/gextech/refaker/badge.png?branch=master)](https://coveralls.io/r/gextech/refaker?branch=master)
+[![Build Status](https://travis-ci.org/gextech/refaker.png?branch=master)](https://travis-ci.org/gextech/refaker) [![NPM version](https://badge.fury.io/js/refaker.png)](http://badge.fury.io/js/refaker) [![Coverage Status](https://coveralls.io/repos/gextech/refaker/badge.png?branch=master)](https://coveralls.io/r/gextech/refaker?branch=master)
