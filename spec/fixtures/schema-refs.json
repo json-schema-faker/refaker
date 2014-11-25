@@ -1,8 +1,7 @@
 {
-  "id": "#refs",
   "definitions": {
     "example": {
-      "$ref": "./child/schema.json"
+      "$ref": "child/schema.json"
     }
   }
 }

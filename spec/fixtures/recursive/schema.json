@@ -1,5 +1,3 @@
 {
-  "$schema": "http://json-schema.org/schema",
-  "type": "boolean",
-  "id": "#"
+  "$ref": "http://example.com/other-refs.json#/definitions/boolean"
 }

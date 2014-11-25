@@ -1,7 +1,6 @@
 {
   "$schema": "http://json-schema.org/schema",
   "type": "object",
-  "id": "#child",
   "properties": {
     "something": {
       "type": "string"
