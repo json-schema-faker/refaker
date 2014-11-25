@@ -15,6 +15,6 @@
   },
   "dependencies": {
     "async-parts": "^0.2.0",
-    "deref": "^0.2.2"
+    "deref": "^0.2.4"
   }
 }
