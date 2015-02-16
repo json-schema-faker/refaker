@@ -10,8 +10,8 @@
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-contrib-connect": "^0.9.0",
-    "grunt-parts": "^0.3.0",
-    "tv4": "^1.1.4"
+    "grunt-parts": "^0.3.3",
+    "tv4": "^1.1.9"
   },
   "dependencies": {
     "async-parts": "^0.2.0",

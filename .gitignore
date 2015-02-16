@@ -4,5 +4,5 @@
 *.tgz
 .DS_Store
 /package
-/reports
+/generated
 /node_modules
