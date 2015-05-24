@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "async-parts": "^0.2.0",
-    "deref": "^0.2.8"
+    "deref": "^0.3.0"
   },
   "publishConfig": {
     "registry": "http://registry.npmjs.org"
