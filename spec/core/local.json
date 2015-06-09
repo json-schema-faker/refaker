@@ -1,0 +1,23 @@
+[
+  {
+    "description": "local references",
+    "tests": [
+      {
+        "description": "should resolve local references",
+        "schema": {
+          "$ref": "numberTest.json"
+        },
+        "data": 42,
+        "valid": true
+      },
+      {
+        "description": "should resolve local references (using ./)",
+        "schema": {
+          "$ref": "./numberTest.json"
+        },
+        "data": 42,
+        "valid": true
+      }
+    ]
+  }
+]
