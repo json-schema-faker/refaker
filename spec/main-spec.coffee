@@ -1,19 +1,23 @@
-path = require('path')
+require('./helpers')
 
+fs = require('fs')
+path = require('path')
+glob = require('glob')
 refaker = require('../lib')
 
-describe 'resolving $ref values', ->
-  it 'should resolve local, external and inline references', (done) ->
-    schema = require('./fixtures/parent/schema.json')
-    data = require('./fixtures/example.json')
+glob.sync(path.join(__dirname, 'core/**/*.json')).forEach (file) ->
+  JSON.parse(fs.readFileSync(file)).forEach (suite) ->
+    describe "#{suite.description} (#{path.relative(path.join(__dirname, 'core'), file)})", ->
+      suite.tests.forEach (test) ->
+        it test.description, (done) ->
+          refaker
+            schema: test.schema
+            fakeroot: 'http://test.example.com'
+            directory: path.join(__dirname, 'schemas')
+          , (err, refs) ->
+            throw err if err
 
-    refaker
-      schemas: [schema]
-      fakeroot: 'http://example.com'
-      directory: path.resolve(__dirname + '/fixtures')
-    , (err, refs, schemas) ->
-      unless err
-        expect(schemas[0]).toHaveRefs 2
-        expect(data).toHaveSchema schemas[0], refs
+            if test.valid
+              expect(test.data).toHaveSchema test.schema, refs
 
-      done(err)
+            done()

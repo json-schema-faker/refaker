@@ -1,7 +1,0 @@
-{
-  "definitions": {
-    "example": {
-      "$ref": "child/schema.json"
-    }
-  }
-}
