@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gextech/refaker"
+    "url": "https://github.com/pateketrueke/refaker"
   },
   "devDependencies": {
     "clone": "^1.0.2",
