@@ -28,6 +28,20 @@
           "x": ["y", 42, ["z"]],
           "y": ["y", 42, ["z"]]
         }
+      },
+      {
+        "description": "should fail on unreachable remote references",
+        "schema": {
+          "$ref": "http://some.unexistant.url.or/something/that/will-fail.this.test"
+        },
+        "throws": "cannot reach http://some.unexistant.url.or/something/that/will-fail.this.test"
+      },
+      {
+        "description": "should fail on invalid remote references (faked, json error)",
+        "schema": {
+          "$ref": "http://localhost:8081/failedTest.json"
+        },
+        "throws": "cannot parse http://localhost:8081/failedTest.json"
       }
     ]
   }
