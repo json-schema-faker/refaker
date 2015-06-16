@@ -3,7 +3,7 @@
     "description": "inline references",
     "tests": [
       {
-        "description": "should handle inline references",
+        "description": "should skip inline references",
         "schema": {
           "type": "object",
           "required": ["testNumber"],
