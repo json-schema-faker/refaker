@@ -1,6 +1,15 @@
 [
   {
     "description": "remote references",
-    "tests": []
+    "tests": [
+      {
+        "description": "should resolve remote references",
+        "schema": {
+          "$ref": "http://localhost:8081/numberTest.json"
+        },
+        "data": 42,
+        "valid": true
+      }
+    ]
   }
 ]

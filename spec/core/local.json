@@ -3,6 +3,14 @@
     "description": "local references",
     "tests": [
       {
+        "description": "should resolve local references (absolute /)",
+        "schema": {
+          "$ref": "/numberTest.json"
+        },
+        "data": 42,
+        "valid": true
+      },
+      {
         "description": "should resolve local references (name only)",
         "schema": {
           "$ref": "numberTest.json"
