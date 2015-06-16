@@ -17,7 +17,6 @@ glob.sync(path.join(__dirname, 'core/**/*.json')).forEach (file) ->
           , (err, refs, schema) ->
             throw err if err
 
-            if test.valid
-              expect(test.data).toHaveSchema schema, refs
+            expect(test.data).toHaveSchema schema, refs
 
             done()
