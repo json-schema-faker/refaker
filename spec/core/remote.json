@@ -9,6 +9,14 @@
         },
         "data": 42,
         "valid": true
+      },
+      {
+        "description": "should resolve remote references (nested)",
+        "schema": {
+          "$ref": "http://localhost:8081/sub/arrayTest.json"
+        },
+        "data": ["x"],
+        "valid": true
       }
     ]
   }

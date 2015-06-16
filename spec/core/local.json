@@ -11,7 +11,7 @@
         "valid": true
       },
       {
-        "description": "should resolve local references (name only)",
+        "description": "should resolve local references (path only)",
         "schema": {
           "$ref": "numberTest.json"
         },
@@ -32,6 +32,14 @@
           "$ref": "http://test.example.com/numberTest.json"
         },
         "data": 42,
+        "valid": true
+      },
+      {
+        "description": "should resolve local refereces (faked, nested)",
+        "schema": {
+          "$ref": "http://test.example.com/sub/arrayTest.json"
+        },
+        "data": ["x"],
         "valid": true
       }
     ]
