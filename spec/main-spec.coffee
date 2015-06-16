@@ -34,4 +34,8 @@ glob.sync(path.join(__dirname, 'core/**/*.json')).forEach (file) ->
 
               expect(test.data).toHaveSchema schemas[0], refs
 
+            if test.refs
+              for ref in test.refs
+                expect(Object.keys(refs)).toContain ref
+
             done()
