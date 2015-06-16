@@ -1,0 +1,9 @@
+{
+  "type": "object",
+  "required": ["y"],
+  "properties": {
+    "y": {
+      "$ref": "../path/nestedTest.json"
+    }
+  }
+}

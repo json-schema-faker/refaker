@@ -7,16 +7,27 @@
         "schema": {
           "$ref": "http://localhost:8081/numberTest.json"
         },
-        "data": 42,
-        "valid": true
+        "data": 42
       },
       {
         "description": "should resolve remote references (nested)",
         "schema": {
           "$ref": "http://localhost:8081/sub/arrayTest.json"
         },
-        "data": ["x"],
-        "valid": true
+        "data": ["x"]
+      },
+      {
+        "description": "should resolve remote references (multiple, nested)",
+        "schema": {
+          "allOf": [
+            { "$ref": "http://localhost:8081/objectTest.json" },
+            { "$ref": "http://localhost:8081/sub/other/subTest.json" }
+          ]
+        },
+        "data": {
+          "x": ["y", 42, ["z"]],
+          "y": ["y", 42, ["z"]]
+        }
       }
     ]
   }

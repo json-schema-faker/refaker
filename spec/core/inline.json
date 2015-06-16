@@ -21,8 +21,7 @@
         },
         "data": {
           "testNumber": 42
-        },
-        "valid": true
+        }
       }
     ]
   }

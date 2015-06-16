@@ -7,40 +7,48 @@
         "schema": {
           "$ref": "/numberTest.json"
         },
-        "data": 42,
-        "valid": true
+        "data": 42
       },
       {
         "description": "should resolve local references (path only)",
         "schema": {
           "$ref": "numberTest.json"
         },
-        "data": 42,
-        "valid": true
+        "data": 42
       },
       {
         "description": "should resolve local references (using ./)",
         "schema": {
           "$ref": "./numberTest.json"
         },
-        "data": 42,
-        "valid": true
+        "data": 42
       },
       {
         "description": "should resolve local references (faked)",
         "schema": {
           "$ref": "http://test.example.com/numberTest.json"
         },
-        "data": 42,
-        "valid": true
+        "data": 42
       },
       {
         "description": "should resolve local refereces (faked, nested)",
         "schema": {
           "$ref": "http://test.example.com/sub/arrayTest.json"
         },
-        "data": ["x"],
-        "valid": true
+        "data": ["x"]
+      },
+      {
+        "description": "should resolve local references (faked multiple, nested)",
+        "schema": {
+          "allOf": [
+            { "$ref": "http://test.example.com/objectTest.json" },
+            { "$ref": "http://test.example.com/sub/other/subTest.json" }
+          ]
+        },
+        "data": {
+          "x": ["y", 42, ["z"]],
+          "y": ["y", 42, ["z"]]
+        }
       }
     ]
   }

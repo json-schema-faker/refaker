@@ -1,0 +1,10 @@
+{
+  "type": "array",
+  "items": {
+    "anyOf": [
+      { "$ref": "stringTest.json" },
+      { "$ref": "../arrayTest.json" },
+      { "$ref": "../../numberTest.json" }
+    ]
+  }
+}
