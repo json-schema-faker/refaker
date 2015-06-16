@@ -1,15 +1,6 @@
 [
   {
     "description": "remote references",
-    "tests": [
-      {
-        "description": "should resolve remote references (faked)",
-        "schema": {
-          "$ref": "http://test.example.com/numberTest.json"
-        },
-        "data": 42,
-        "valid": true
-      }
-    ]
+    "tests": []
   }
 ]

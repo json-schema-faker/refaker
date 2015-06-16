@@ -3,7 +3,7 @@
     "description": "local references",
     "tests": [
       {
-        "description": "should resolve local references",
+        "description": "should resolve local references (name only)",
         "schema": {
           "$ref": "numberTest.json"
         },
@@ -14,6 +14,14 @@
         "description": "should resolve local references (using ./)",
         "schema": {
           "$ref": "./numberTest.json"
+        },
+        "data": 42,
+        "valid": true
+      },
+      {
+        "description": "should resolve local references (faked)",
+        "schema": {
+          "$ref": "http://test.example.com/numberTest.json"
         },
         "data": 42,
         "valid": true
