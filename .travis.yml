@@ -3,5 +3,5 @@ node_js:
   - 0.10
 before_script:
   - 'npm install -g grunt-cli coveralls'
-script:
-  - 'grunt connect test:parts && cat generated/lcov.info | coveralls'
+scripti:
+  - 'grunt connect spec && cat generated/reports/spec/lcov.info | coveralls'
