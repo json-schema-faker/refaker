@@ -16,9 +16,15 @@ describe 'other specs', ->
       expect(-> refaker(schemas: -1)).toThrow()
       done()
 
+specFilter = require('grunt').cli.options.spec or ''
+
 glob.sync(path.join(__dirname, 'core/**/*.json')).forEach (file) ->
+  return if file.indexOf(specFilter) is -1
+
   JSON.parse(fs.readFileSync(file)).forEach (suite) ->
-    describe "#{suite.description} (#{path.relative(path.join(__dirname, 'core'), file)})", ->
+    filename = path.relative(path.join(__dirname, 'core'), file)
+
+    describe "#{suite.description} (#{filename})", ->
       suite.tests.forEach (test) ->
         it test.description, (done) ->
           refaker
