@@ -5,5 +5,5 @@ node_js:
   - iojs
 before_script:
   - 'npm install -g grunt-cli coveralls'
-scripti:
+script:
   - 'grunt connect spec && cat generated/reports/spec/lcov.info | coveralls'
