@@ -1,5 +1,7 @@
 # A JSON-schema $ref faker
 
+[![Build Status](https://travis-ci.org/json-schema-faker/refaker.png?branch=master)](https://travis-ci.org/json-schema-faker/refaker) [![NPM version](https://badge.fury.io/js/refaker.png)](http://badge.fury.io/js/refaker) [![Coverage Status](https://coveralls.io/repos/json-schema-faker/refaker/badge.png?branch=master)](https://coveralls.io/r/json-schema-faker/refaker?branch=master)
+
 Inspired on [json-schema-validator](https://github.com/fge/json-schema-validator) for JAVA, the `--fakeroot` option, actually.
 
 If you're validating some RAML (like me) then you should validate your JSON-schemas and examples also.
@@ -75,8 +77,3 @@ The given callback will receive three arguments:
 - **schemas** (array)
 
   Normalized schemas if success (same order as input).
-
-
-## Build status
-
-[![Build Status](https://travis-ci.org/pateketrueke/refaker.png?branch=master)](https://travis-ci.org/pateketrueke/refaker) [![NPM version](https://badge.fury.io/js/refaker.png)](http://badge.fury.io/js/refaker) [![Coverage Status](https://coveralls.io/repos/pateketrueke/refaker/badge.png?branch=master)](https://coveralls.io/r/pateketrueke/refaker?branch=master)
