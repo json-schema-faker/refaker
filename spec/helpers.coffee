@@ -1,5 +1,6 @@
 tv4 = require('tv4')
 clone = require('clone')
+isMyJSONValid = require('is-my-json-valid')
 
 refCount = (node, acc = 0) ->
   acc += 1 if node.$ref
@@ -17,13 +18,26 @@ jasmine.Matchers::toHaveRefs = (expected = 0) ->
   true
 
 jasmine.Matchers::toHaveSchema = (expected, refs) ->
+  validate = isMyJSONValid(expected, schemas: refs)
+
+  unless validate(@actual)
+    throw new Error validate.errors
+      .map((e) -> e.desc or e.message)
+      .join('\n')
+
   api = tv4.freshApi()
-  api.addSchema(id, clone(schema)) for id, schema of refs if refs
 
-  result = api.validateResult(@actual, clone(expected), false, false)
+  api.banUnknown = false
+  api.cyclicCheck = false
 
-  throw 'Missing ' + result.missing.join(', ') if result.missing.length
+  api.addSchema(id, json) for id, json of refs
 
-  throw result.error.message if result.error
+  result = api.validateResult @actual,
+    clone(expected), api.cyclicCheck, api.banUnknown
+
+  if result.missing.length
+    throw new Error 'Missing ' + result.missing.join(', ')
+
+  throw result.error if result.error
 
   true

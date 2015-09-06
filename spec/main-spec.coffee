@@ -35,9 +35,9 @@ glob.sync(path.join(__dirname, 'core/**/*.json')).forEach (file) ->
             if test.throws
               if typeof test.throws is 'string'
                 expect(err.toString()).toContain test.throws
-            else
-              throw err if err
+              else throw err if err
 
+            if test.data
               expect(test.data).toHaveSchema schemas[0], refs
 
             if test.refs
