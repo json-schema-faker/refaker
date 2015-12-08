@@ -18,8 +18,8 @@
     "tv4": "^1.1.12"
   },
   "dependencies": {
-    "async-parts": "^0.2.1",
-    "deref": "^0.4.0"
+    "async-parts": "^0.2.2",
+    "deref": "^0.6.3"
   },
   "publishConfig": {
     "registry": "http://registry.npmjs.org"
