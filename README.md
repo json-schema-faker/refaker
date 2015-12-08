@@ -60,6 +60,10 @@ That's it.
 
   If missing, will use `process.cwd()` instead.
 
+- **timeout** (number)
+
+  Timeout when resolving remote schemas, default to 200ms.
+
 Any `$ref` found will be downloaded or faked locally.
 
 ## Callback
