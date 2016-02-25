@@ -81,3 +81,7 @@ The given callback will receive three arguments:
 - **schemas** (array)
 
   Normalized schemas if success (same order as input).
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/json-schema-faker/refaker/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
