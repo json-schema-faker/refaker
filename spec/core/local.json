@@ -31,7 +31,7 @@
         "data": 42
       },
       {
-        "description": "should resolve local refereces (faked, nested)",
+        "description": "should resolve local references (faked, nested)",
         "schema": {
           "$ref": "http://test.example.com/sub/arrayTest.json"
         },

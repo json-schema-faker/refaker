@@ -1,43 +1,24 @@
-tv4 = require('tv4')
+Ajv = require('ajv')
 clone = require('clone')
-isMyJSONValid = require('is-my-json-valid')
 
-refCount = (node, acc = 0) ->
-  acc += 1 if node.$ref
+global.customMatchers =
+  toConformSchema: ->
+    compare: (actual, expected) ->
+      [ expected, refs ] = expected if Array.isArray(expected)
 
-  for id, value of node
-    if typeof value is 'object'
-      acc += refCount(value)
+      fail = []
 
-  acc
+      ajv = new Ajv()
 
-jasmine.Matchers::toHaveRefs = (expected = 0) ->
-  if expected isnt nodes = refCount @actual
-    throw new Error "Invalid $ref count #{nodes}, expected #{expected}"
+      if refs
+        for k, s of refs
+          ajv.addSchema(clone(s), k)
 
-  true
+      validate = ajv.compile expected
+      valid = validate actual
 
-jasmine.Matchers::toHaveSchema = (expected, refs) ->
-  validate = isMyJSONValid(expected, schemas: refs)
+      unless valid
+        console.log(validate.errors)
 
-  unless validate(@actual)
-    throw new Error validate.errors
-      .map((e) -> e.desc or e.message)
-      .join('\n')
-
-  api = tv4.freshApi()
-
-  api.banUnknown = false
-  api.cyclicCheck = false
-
-  api.addSchema(id, json) for id, json of refs
-
-  result = api.validateResult @actual,
-    clone(expected), api.cyclicCheck, api.banUnknown
-
-  if result.missing.length
-    throw new Error 'Missing ' + result.missing.join(', ')
-
-  throw result.error if result.error
-
-  true
+      pass: !fail.length
+      message: fail.join('\n') if fail.length
