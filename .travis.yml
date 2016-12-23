@@ -6,7 +6,9 @@ node_js:
   - 6
   - iojs
 before_script:
-  - 'python -m SimpleHTTPServer 8081 spec/schemas'
-  - 'npm run cover'
+  - 'python -m SimpleHTTPServer 8081 spec/schemas &'
+  - 'yarn cover'
 script:
-  - 'npm run cover:up'
+  - 'yarn cover:up'
+notifications:
+  email: false
