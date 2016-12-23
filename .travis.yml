@@ -1,13 +1,10 @@
 language: node_js
 node_js:
-  - 0.10
-  - 0.12
   - 4
   - 6
-  - iojs
 before_script:
-  - 'python -m SimpleHTTPServer 8081 spec/schemas &'
-  - 'yarn cover'
+  - 'cd spec/schemas && python -m SimpleHTTPServer 8081 &'
+  - 'cd ../.. yarn cover'
 script:
   - 'yarn cover:up'
 notifications:
