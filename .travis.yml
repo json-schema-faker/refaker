@@ -3,9 +3,10 @@ node_js:
   - 4
   - 6
 before_script:
-  - 'python -m SimpleHTTPServer 8081 spec/schemas &'
-  - 'yarn cover'
+  - 'yarn global add http-server'
+  - 'http-server spec/schemas -p 8081 &'
 script:
+  - 'yarn cover'
   - 'yarn cover:up'
 notifications:
   email: false
