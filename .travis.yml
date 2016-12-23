@@ -4,7 +4,7 @@ node_js:
   - 6
 before_script:
   - 'yarn global add http-server'
-  - 'http-server spec/schemas -p 8081 &'
+  - 'http-server spec/schemas -s -p 8081 &'
 script:
   - 'yarn cover'
   - 'yarn cover:up'
