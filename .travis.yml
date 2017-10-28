@@ -1,9 +1,12 @@
 language: node_js
 node_js:
-  - 0.10
-  - 0.12
-  - iojs
+  - 4
+  - 6
 before_script:
-  - 'npm install -g grunt-cli coveralls'
+  - 'yarn global add http-server'
+  - 'http-server spec/schemas -s -p 8081 &'
 script:
-  - 'grunt connect spec && cat generated/reports/spec/lcov.info | coveralls'
+  - 'yarn cover'
+  - 'yarn cover:up'
+notifications:
+  email: false
