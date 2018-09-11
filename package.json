@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "deref": "^0.7.0",
-    "es6-promise": "^4.0.5"
+    "es6-promise": "^4.2.5"
   },
   "publishConfig": {
     "registry": "http://registry.npmjs.org"
