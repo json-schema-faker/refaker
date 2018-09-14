@@ -33,7 +33,7 @@
     "tv4": "^1.1.12"
   },
   "dependencies": {
-    "deref": "^0.7.0",
+    "deref": "^0.7.6",
     "es6-promise": "^4.0.5"
   },
   "publishConfig": {
